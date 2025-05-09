@@ -1,0 +1,283 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para Melisa 💌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 900px;
+      height: 90%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .contenido {
+      font-size: 1.5rem;
+      color: #444;
+      line-height: 2;
+      text-align: center;
+      display: none;
+      overflow-y: auto;
+      max-height: 100%;
+    }
+
+    .mostrar {
+      display: block;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div id="contenido" class="contenido">
+      Mi amor:<br><br>
+      Quería hacerte esta carta como un detalle de amor, y para presumir un poquito de lo que puedo hacer jeje.<br><br>
+      Gracias por estar a mi lado, por elegirme cada día, por soportar mi locura y por todo lo que compartimos.<br><br>
+      Sos la persona que siempre soñé, la que me hace reír, emocionarme y sentirme completo.<br><br>
+      Con vos quiero compartir mi presente, mi futuro y todos los momentos que nos esperan.<br><br>
+      Te amo con todo mi ser, y espero que esta carta te recuerde lo especial que sos para mí.<br><br>
+      Con todo mi amor,<br>Esteban 💖
+    </div>
+    <button onclick="mostrarCarta()">Abrir carta</button>
+  </div>
+  
+
+  
+
+<script>
+  function mostrarCarta() {
+    document.getElementById("contenido").classList.add("mostrar");
+    const sonido = document.getElementById("sonido");
+    sonido.play().catch(e => {
+      console.log("El navegador bloqueó el sonido:",);
+    });
+  }
+</script>
+
+  </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta para Melisa 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .corazones {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .corazon {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 2rem;
+      animation: flotar 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 900px;
+      height: 90%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contenido {
+      font-size: 1.5rem;
+      color: #444;
+      line-height: 2;
+      text-align: center;
+      display: none;
+      overflow-y: auto;
+      max-height: 100%;
+    }
+
+    .mostrar {
+      display: block;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      z-index: 1;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+      transform: scale(1.05);
+    }
+
+    /* Responsive ajustes */
+    @media (max-width: 600px) {
+      .contenido {
+        font-size: 1.1rem;
+        padding: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+
+      .corazon {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="corazones" id="corazones"></div>
+
+  <div class="contenedor">
+    <div id="contenido" class="contenido">
+      Mi amor:<br><br>
+      Quería hacerte esta carta como un detalle de amor, y para presumir un poquito de lo que puedo hacer jeje.<br><br>
+      Gracias por estar a mi lado, por elegirme cada día, por soportar mi locura y por todo lo que compartimos.<br><br>
+      Sos la persona que siempre soñé, la que me hace reír, emocionarme y sentirme completo.<br><br>
+      Con vos quiero compartir mi presente, mi futuro y todos los momentos que nos esperan.<br><br>
+      Te amo con todo mi ser, y espero que esta carta te recuerde lo especial que sos para mí.<br><br>
+      Con todo mi amor,<br>Esteban 💖
+    </div>
+    <button onclick="mostrarCarta()">Tocá para abrir mi corazón ❤️</button>
+  </div>
+
+  <audio id="sonido" preload="auto">
+    <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <script>
+    function mostrarCarta() {
+      document.getElementById("contenido").classList.add("mostrar");
+      const sonido = document.getElementById("sonido");
+      sonido.currentTime = 0;
+      sonido.play().catch(err => console.log("Error al reproducir sonido:", err));
+    }
+
+    // Corazones flotantes
+    const corazonesContenedor = document.getElementById("corazones");
+    for (let i = 0; i < 40; i++) {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon");
+      corazon.innerText = "❤️";
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.animationDuration = 5 + Math.random() * 5 + "s";
+      corazon.style.fontSize = 1 + Math.random() * 2 + "rem";
+      corazon.style.opacity = 0.4 + Math.random() * 0.6;
+      corazonesContenedor.appendChild(corazon);
+    }
+  </script>
+
+</body>
+</html>
+
+
